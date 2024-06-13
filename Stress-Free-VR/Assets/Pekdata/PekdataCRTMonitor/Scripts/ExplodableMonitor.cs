@@ -21,7 +21,7 @@ public class ExplodableMonitor : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision col){
-        if ((col.gameObject.tag == "bullet") && (!broken))
+        if ((col.gameObject.tag == "Weapon") && (!broken))
         {
             broken = true;
             screenOff.SetActive(false);
