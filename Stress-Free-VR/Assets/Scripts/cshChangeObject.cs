@@ -11,7 +11,25 @@ public class cshChangeObject : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "bullet")
+        if (collision.gameObject.tag == "Wall" && gameObject.GetComponent<Rigidbody>().velocity.magnitude >= 1)
+        {
+            Destroy(gameObject);
+            GameObject instantiatedObject = Instantiate(newPrefab, transform.position, Quaternion.identity);
+            forceAmount = gameObject.GetComponent<Rigidbody>().velocity.magnitude * 30.0f;
+            Vector3 forceDirection = gameObject.GetComponent<Rigidbody>().velocity;
+            foreach (Transform child in instantiatedObject.transform)
+            {
+                rb_new = child.gameObject.GetComponent<Rigidbody>();
+                if (rb_new != null)
+                {
+                    rb_new.AddForce(forceDirection * forceAmount);
+                    Debug.Log(rb_new.gameObject.name + ": " + rb_new.velocity.magnitude);
+                    StartCoroutine(LogVelocityNextFrame(rb_new));
+                }
+            }
+        }
+
+            if (collision.gameObject.tag == "Weapon")
         {
 
             rb_col = collision.gameObject.GetComponent<Rigidbody>();

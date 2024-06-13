@@ -4,7 +4,6 @@ using UnityEngine;
 
 //Made by Rajendra Abhinaya, 2023
 
-namespace DiabolicalGames{
 public class DestructibleObject : MonoBehaviour
 {
     enum DebrisAmount{
@@ -131,5 +130,4 @@ public class DestructibleObject : MonoBehaviour
             Break();
         }
     }
-}
 }

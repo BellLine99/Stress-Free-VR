@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DiabolicalGames{
 public class Spawner : MonoBehaviour
 {
     public GameObject spawned;
@@ -18,5 +17,4 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
-}
 }

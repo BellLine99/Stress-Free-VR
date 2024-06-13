@@ -4,7 +4,6 @@ using UnityEngine;
 
 //Made by Rajendra Abhinaya, 2023
 
-namespace DiabolicalGames{
 public class Despawn : MonoBehaviour
 {
     private int despawnPercentage;
@@ -75,5 +74,4 @@ public class Despawn : MonoBehaviour
         yield return new WaitForSeconds(despawnTime);
         DespawnDebris();
     }
-}
 }
