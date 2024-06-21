@@ -65,9 +65,15 @@ public class cshWeaponManager : MonoBehaviour
     public void createCRT()
     {
 
-        Destroy(GameObject.Find("CRTMonitor"));
+        Destroy(GameObject.Find("CRTMonitor(Clone)"));
+
+        StartCoroutine(CreateCRT(0.5f));
+    }
+
+    IEnumerator CreateCRT(float delay)
+    {
+        yield return new WaitForSeconds(delay);
 
         GameObject instantiatedObject = Instantiate(crtMon, crtPos.position, crtPos.rotation);
     }
-
 }
