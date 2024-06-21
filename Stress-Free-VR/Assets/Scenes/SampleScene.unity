@@ -1660,7 +1660,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1513596015828096, guid: 118d794af50d44affb397ac6d1b6a89b, type: 3}
       propertyPath: m_Name
-      value: CRTMonitor
+      value: CRTMonitor(Clone)
       objectReference: {fileID: 0}
     - target: {fileID: 4948899196415192, guid: 118d794af50d44affb397ac6d1b6a89b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4097,7 +4097,7 @@ Transform:
   m_GameObject: {fileID: 411179408}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.9063079, z: -0, w: 0.42261827}
-  m_LocalPosition: {x: -0.22200012, y: 2.668, z: -0.13199997}
+  m_LocalPosition: {x: -0.22200012, y: 3.464, z: -0.13199997}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21525,7 +21525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.097
+      value: 3.775
       objectReference: {fileID: 0}
     - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
       propertyPath: m_LocalPosition.y
