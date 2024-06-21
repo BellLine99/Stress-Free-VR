@@ -5,10 +5,26 @@ using UnityEngine;
 public class cshWeaponManager : MonoBehaviour
 {
     public GameObject[] weapons;
+    public GameObject[] destructible_objects;
+    public GameObject obj_pos;
     private int state = 0;
+    private Vector3 planeSize;
+    private Vector3 planeCenter;
+
+    void Start()
+    {   
+        // To Calc Obj Pos with Plane
+        planeSize = obj_pos.GetComponent<Renderer>().bounds.size;
+        planeCenter = obj_pos.transform.position;
+
+
+
+
+    }
 
     void Update()
     {
+        // A버튼 (무기변경)
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
             state = (state + 1) % 3;
@@ -30,4 +46,16 @@ public class cshWeaponManager : MonoBehaviour
             }
         }
     }
+
+    public void createObject()
+    {
+        Vector3 randomPosition = new Vector3(
+                Random.Range(planeCenter.x - planeSize.x / 2, planeCenter.x + planeSize.x / 2),
+                planeCenter.y,
+                Random.Range(planeCenter.z - planeSize.z / 2, planeCenter.z + planeSize.z / 2)
+            );
+        int randomIndex = Random.Range(0, destructible_objects.Length);
+        GameObject instantiatedObject = Instantiate(destructible_objects[randomIndex], randomPosition, Quaternion.identity);
+    }
+    
 }
