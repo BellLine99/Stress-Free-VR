@@ -8,6 +8,7 @@ TagManager:
   - Controller
   - Weapon
   - Wall
+  - Door
   layers:
   - Default
   - TransparentFX
