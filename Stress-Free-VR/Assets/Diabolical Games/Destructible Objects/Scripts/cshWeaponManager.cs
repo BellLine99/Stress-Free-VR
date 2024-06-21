@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class cshWeaponManager : MonoBehaviour
@@ -10,6 +11,9 @@ public class cshWeaponManager : MonoBehaviour
     private int state = 0;
     private Vector3 planeSize;
     private Vector3 planeCenter;
+
+    public GameObject crtMon;
+    public Transform crtPos;
 
     void Start()
     {   
@@ -57,5 +61,13 @@ public class cshWeaponManager : MonoBehaviour
         int randomIndex = Random.Range(0, destructible_objects.Length);
         GameObject instantiatedObject = Instantiate(destructible_objects[randomIndex], randomPosition, Quaternion.identity);
     }
-    
+
+    public void createCRT()
+    {
+
+        Destroy(GameObject.Find("CRTMonitor"));
+
+        GameObject instantiatedObject = Instantiate(crtMon, crtPos.position, crtPos.rotation);
+    }
+
 }
